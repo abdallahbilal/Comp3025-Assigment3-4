@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:backgroundTint="@color/darkgrey"
+    android:background="@color/darkgrey">
+
+    <CheckBox
+        android:id="@+id/Task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Tasks_title"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/comments"
+        android:layout_marginLeft="35dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
+
+
+
+</LinearLayout>
