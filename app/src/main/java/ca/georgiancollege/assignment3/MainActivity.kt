@@ -21,7 +21,12 @@ class MainActivity : AppCompatActivity() {
             Tasks_data("Task 2", "0000002"),
             Tasks_data("Task 3", "0000003"),
             Tasks_data("Task 4", "0000004"),
-            Tasks_data("Task 5", "0000005")
+            Tasks_data("Task 5", "0000005"),
+            Tasks_data("Task 6", "0000006"),
+            Tasks_data("Task 7", "0000007"),
+            Tasks_data("Task 8", "0000008"),
+            Tasks_data("Task 9", "0000009")
+
         )
         val firstAdapter = FirstAdapter(dailyTasks)
 // Use view binding to replace findViewById or synthetic properties
