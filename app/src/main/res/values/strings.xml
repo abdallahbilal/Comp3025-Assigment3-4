@@ -3,4 +3,7 @@
     <string name="add_task">+</string>
     <string name="comments">Comments</string>
     <string name="Tasks_title">Task1</string>
+    <string name="enter_task_name">Task Title</string>
+    <string name="Comments">CommentsTextView</string>
+    <string name="enter_comments">Comments</string>
 </resources>

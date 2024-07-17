@@ -1,5 +1,6 @@
 package ca.georgiancollege.assignment3
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,9 @@ import ca.georgiancollege.assignment3.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     // Declare an instance of the binding class
     private lateinit var binding: ActivityMainBinding
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 // Inflate the layout
@@ -34,5 +38,11 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
             adapter = firstAdapter
         }
+
+        binding.addButton.setOnClickListener {
+            val intent = Intent(this, TaskEntryActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
