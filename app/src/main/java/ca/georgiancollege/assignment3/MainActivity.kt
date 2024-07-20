@@ -8,6 +8,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import ca.georgiancollege.assignment3.databinding.ActivityMainBinding
+/*
+*
+* Abdallah Bilal
+* Comp 3025
+* Assignment3
+* To-Do List App
+* 20/07/2024
+*
+* */
+
+
+
+
 
 class MainActivity : AppCompatActivity() {
     // Declare an instance of the binding class
@@ -20,16 +33,13 @@ class MainActivity : AppCompatActivity() {
 // Inflate the layout
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Mock data
         val dailyTasks = arrayOf(
-            Tasks_data("Task 1", "0000001"),
-            Tasks_data("Task 2", "0000002"),
-            Tasks_data("Task 3", "0000003"),
-            Tasks_data("Task 4", "0000004"),
-            Tasks_data("Task 5", "0000005"),
-            Tasks_data("Task 6", "0000006"),
-            Tasks_data("Task 7", "0000007"),
-            Tasks_data("Task 8", "0000008"),
-            Tasks_data("Task 9", "0000009")
+            Tasks_data("Task 1", "Clean the house"),
+            Tasks_data("Task 2", "Groceries"),
+            Tasks_data("Task 3", "Make dinner"),
+            Tasks_data("Task 4", "Watch House of the Dragon"),
+            Tasks_data("Task 5", "Sleep")
 
         )
         val firstAdapter = FirstAdapter(dailyTasks)
@@ -38,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
             adapter = firstAdapter
         }
-
+// Set up the button click listener for the add button
         binding.addButton.setOnClickListener {
             val intent = Intent(this, TaskEntryActivity::class.java)
             startActivity(intent)
