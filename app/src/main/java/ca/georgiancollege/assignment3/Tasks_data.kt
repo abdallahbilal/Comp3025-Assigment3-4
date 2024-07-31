@@ -1,9 +1,13 @@
-package ca.georgiancollege.assignment3
 
-import java.sql.Date
-
-data class Tasks_data(
+import com.google.firebase.database.IgnoreExtraProperties
+import com.google.firebase.firestore.DocumentId
+@IgnoreExtraProperties
+data class TVShow(
+    @DocumentId val id: String = "",
     val tasks_Title: String,
-    val comments : String,
+   val comments : String,
 
 )
+{
+    constructor() : this("", "", "")
+}
