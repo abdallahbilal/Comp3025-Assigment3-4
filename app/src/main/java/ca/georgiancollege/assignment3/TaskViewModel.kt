@@ -11,8 +11,8 @@ class TaskViewModel : ViewModel()
     private val dataManager = DataManager.instance()
     private val m_tasks = MutableLiveData<List<Task>>()
     val tasks: LiveData<List<Task>> get() = m_tasks
-    private val m_tvShow = MutableLiveData<Task?>()
-    val task: LiveData<Task?> get() = m_tasks
+    private val m_task = MutableLiveData<Task?>()
+    val task: LiveData<Task?> get() = m_task
 
     fun loadAllTasks() {
         viewModelScope.launch {
@@ -22,7 +22,7 @@ class TaskViewModel : ViewModel()
 
     fun loadTasksById(id: String) {
         viewModelScope.launch {
-            m_tasks.value = dataManager.getTaskById(id)
+            m_task.value = dataManager.getTaskById(id)
         }
     }
 
