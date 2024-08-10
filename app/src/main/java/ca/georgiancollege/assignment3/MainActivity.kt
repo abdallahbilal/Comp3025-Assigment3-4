@@ -2,57 +2,66 @@ package ca.georgiancollege.assignment3
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import ca.georgiancollege.assignment3.databinding.ActivityMainBinding
+import com.google.firebase.firestore.FirebaseFirestore
+
+
 /*
 *
 * Abdallah Bilal
 * Comp 3025
 * Assignment3
 * To-Do List App
-* 20/07/2024
+* 07/08/2024
 *
 * */
 
-
-
-
-
 class MainActivity : AppCompatActivity() {
-    // Declare an instance of the binding class
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: TaskViewModel by viewModels()
 
+    private lateinit var dataManager: DataManager
 
+    private val adapter = TaskListAdapter { task: Task ->
+        val intent = Intent(this, TaskEntryActivity::class.java).apply {
+            putExtra("taskId", taskId)
+        }
+        startActivity(intent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-// Inflate the layout
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //Mock data
-        val dailyTasks = arrayOf(
-            Tasks_data("Task 1", "Clean the house"),
-            Tasks_data("Task 2", "Groceries"),
-            Tasks_data("Task 3", "Make dinner"),
-            Tasks_data("Task 4", "Watch House of the Dragon"),
-            Tasks_data("Task 5", "Sleep")
 
-        )
-        val firstAdapter = FirstAdapter(dailyTasks)
-// Use view binding to replace findViewById or synthetic properties
-        binding.firstRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = firstAdapter
+        // Initialize Firebase Firestore
+        FirebaseFirestore.setLoggingEnabled(true)
+
+        // creates an alias for the DataManager instance
+        dataManager = DataManager.instance()
+
+        binding.firstRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.firstRecyclerView.adapter = adapter
+
+        // Observe the TVShows LiveData to update the UI
+        viewModel.tasks.observe(this) { tasks ->
+            adapter.submitList(tasks)
         }
-// Set up the button click listener for the add button
+
+        viewModel.loadAllTasks()
+
         binding.addButton.setOnClickListener {
             val intent = Intent(this, TaskEntryActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
+
+
+
+
+
+

@@ -10,7 +10,7 @@ class TaskViewHolder(private val binding: TextRowItemBinding) : RecyclerView.Vie
     // Binds the data from a Task object to the views in the ViewHolder.
     fun bind(task: Task) {
         // Set the title of the task to the TextView
-        binding.Task.text = task.tasks_Title
+        binding.Task.text = task.title
         // Set the comments of the Task to the TextView
         binding.comments.text = task.comments
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "208645475168",
+    "project_id": "comp3025-assignment3and4",
+    "storage_bucket": "comp3025-assignment3and4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208645475168:android:977824f20ce0312ec5ec05",
+        "android_client_info": {
+          "package_name": "ca.georgiancollege.assignment3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjIyQ04ZaPK1-ZjkFZqp4e2tKibyzNVLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
