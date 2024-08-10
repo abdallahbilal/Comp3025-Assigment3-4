@@ -11,7 +11,7 @@
         android:id="@+id/Task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Tasks_title"
+        android:text="@string/title"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:buttonTint="@color/white"
