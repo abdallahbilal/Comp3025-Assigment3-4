@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         binding.firstRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.firstRecyclerView.adapter = adapter
 
-        // Observe the TVShows LiveData to update the UI
+        // Observe the Task LiveData to update the UI
         viewModel.tasks.observe(this) { tasks ->
             adapter.submitList(tasks)
         }
@@ -58,13 +58,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-        override fun onResume()
-        {
-            super.onResume()
-            viewModel.loadAllTasks()
-        }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadAllTasks()
+    }
 }
+
 
 
 

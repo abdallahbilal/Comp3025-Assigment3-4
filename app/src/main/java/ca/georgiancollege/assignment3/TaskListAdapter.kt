@@ -20,11 +20,11 @@ class TaskListAdapter(private val onItemClicked: (Task) -> Unit) :
 
     // Called by the RecyclerView to display the data at the specified position.
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        // Get the TVShow item at the given position
+
         val current = getItem(position)
-        // Bind the TVShow item to the ViewHolder
+
         holder.bind(current)
-        // Set a click listener on the itemView to handle item clicks
+
         holder.itemView.setOnClickListener {
             onItemClicked(current)
         }
